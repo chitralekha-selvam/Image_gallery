@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Explore images</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+         $(".like").click(function () {
+             var input = $(this).find('.qty1');
+             input.val(parseInt(input.val())+ 1);
+    
+         });
+     $(".dislike").click(function () {
+         var input = $(this).find('.qty2');
+         input.val(input.val() - 1);
+     });
+  });
+</script>
+<style type="text/css">
+  .like, .dislike {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background: lightgreen;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+}
+.qty1, .qty2 {
+    border: none;
+    width:20px;
+    background: transparent;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container"> 
+    <a class="like"><i class="fa fa-thumbs-o-up" class="glyphicon glyphicon-thumbs-up"></i>  
+        Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+    </a>
+    <a class="dislike"><i class="fa fa-thumbs-o-down" class="glyphicon glyphicon-thumbs-down"></i> 
+        Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="0" />
+    </a>
+  <a href="one.html"><img src="images/image_one.jpg" class="img-thumbnail" width="304" height="236"> </a>
+</div>
+
+<div class="container"> 
+    <a class="like"><i class="fa fa-thumbs-o-up" class="glyphicon glyphicon-thumbs-up"></i>  
+        Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+    </a>
+    <a class="dislike"><i class="fa fa-thumbs-o-down" class="glyphicon glyphicon-thumbs-down"></i> 
+        Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="0" />
+    </a>
+  <a href="img_one.html"><img src="images/image_two.jpg" class="img-thumbnail" width="304" height="236"> </a>
+</div>
+
+<div class="container"> 
+    <a class="like"><i class="fa fa-thumbs-o-up" class="glyphicon glyphicon-thumbs-up"></i>  
+        Like <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+    </a>
+    <a class="dislike"><i class="fa fa-thumbs-o-down" class="glyphicon glyphicon-thumbs-down"></i> 
+        Dislike <input class="qty2"  name="qty2" readonly="readonly" type="text" value="0" />
+    </a>
+  <a href="img_two.html"><img src="images/image_three.jpg" class="img-thumbnail" width="304" height="236"> </a>
+</div>
+
+</body>
+</html>
+
+

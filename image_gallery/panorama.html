@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Image upload</title>
+<style media="screen">
+	body{
+		display:flex;
+		min-height:100vh;
+		width:100%;
+		padding:0;
+		margin:0;
+		align-items:center;
+		justify-content:center;
+		flex-direction: column;
+	}
+
+	#uploader{
+		-webkit-appearance:none;
+		appearance:none;
+		width:50%;
+		margin-bottom: 10px;
+	}
+</style>
+<body>
+<progress value="0" max="100" id="uploader">0%</progress>
+<input type="file" value="upload" id="fileButton" />
+
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script>
+  // Your web app's Firebase configuration
+  var config = {
+    apiKey: "AIzaSyCrmTjVX-2i-dCq4if47HWHI-iCiqIv8Xk",
+    authDomain: "panorama-image-3cb0d.firebaseapp.com",
+    databaseURL: "https://panorama-image-3cb0d.firebaseio.com",
+    projectId: "panorama-image-3cb0d",
+    storageBucket: "panorama-image-3cb0d.appspot.com",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(config);
+
+
+  var uploader=document.getElementById('uploader');
+  var fileButton=document.getElementById('fileButton');
+  var retrieve=document.getElementById('re_fileButton');
+
+  fileButton.addEventListener('change',function(e)
+  {
+  	var file=e.target.files[0];
+  	var storageRef=firebase.storage().ref('photos_jpg/'+file.name);
+  	var task=storageRef.put(file);
+  	task.on('state_changed',
+
+  	function progress(snapshot){
+  		var percentage=(snapshot.bytesTransferred/snapshot.totalBytes)*100;
+  		uploader.value=percentage;
+
+  	},
+  	function error(err)
+  	{
+
+  	},
+  	function complete()
+  	{
+
+  	}
+  	);
+  });
+
+
+</script>
+</body>
+</html>
